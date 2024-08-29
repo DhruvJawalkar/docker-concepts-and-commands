@@ -1,0 +1,42 @@
+Docker run -d nginx
+Docker ps
+Docker ps -a
+Docker stop silly_sammet
+Docker rm silly_sammet
+Docker rm [<first 3 digits of container id>]
+Docker images
+Docker rmi nginx
+Docker pull nginx
+
+Docker run ubuntu sleep 5
+Docker exec sample_container cat /etc/hosts
+Docker run -d kodekloud/simple-webapp
+Docker attach <container-id>
+Docker run redis:4.0
+Docker run -i kodekloud/simple-prompt-docker
+Docker run -it kodekloud/simple-prompt-docker
+Docker help
+docker run --name mycontainer -d -i -t alpine /bin/sh
+docker exec -it mycontainer sh
+Docker run -d -p 80:8080 kodekloud/simple-webapp
+curl http://localhost:80 (also works with internal ip if port is not specified, can use docker inspect container)
+
+Docker run -v /opt/datadir:/var/lib/mysql mysql
+docker run -e env_var=value <imageName>
+Docker run -e APP_COLOR=blue simple-webapp-color
+Docker inspect <container-name>
+Docker logs <container-name>
+
+//building an image
+Docker build Dockerfile -t mmumshad/my-custom-app
+Docker build . -t my-custom-app
+Docker push mmumshad/my-custom-app
+
+Docker run ubuntu sleep 5
+docker run ubuntu-sleeper 10
+docker run --entrypoint sleep2.0 ubuntu-sleeper 10
+docker build -h
+docker run --name=my-webapp -d -p 8282:8080 webapp-color
+docker run python:3.6 cat /etc/*release*
+docker run -d -p 38282:8080 -e APP_COLOR=blue --name=blue-app kodekloud/simple-webapp
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -d mysql
