@@ -40,3 +40,6 @@ docker run --name=my-webapp -d -p 8282:8080 webapp-color
 docker run python:3.6 cat /etc/*release*
 docker run -d -p 38282:8080 -e APP_COLOR=blue --name=blue-app kodekloud/simple-webapp
 docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -d mysql
+
+docker run -d --name=redis redis:alpine
+docker run -d --name=clickcounter --link=redis:redis -p=8085:5000 kodekloud/click-counte
